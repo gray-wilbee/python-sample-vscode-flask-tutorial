@@ -30,6 +30,9 @@ stages:
   displayName: Build stage
   jobs:
   - job: BuildJob
+    strategy:
+      matrix:
+      maxParallel: 1
     pool:
       vmImage: $(vmImageName)
     steps:
